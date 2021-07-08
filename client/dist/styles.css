@@ -21,13 +21,14 @@ body {
 
 .hero {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   justify-content: center;
   height: 300px;
   width: auto;
   margin: auto;
   background-image: linear-gradient(180deg, rgb(36, 36, 235), rgb(97, 181, 255));
   text-align: center;
+  border-radius: 5px;
 }
 
 .search {
@@ -56,4 +57,56 @@ body {
   background-color: #3e8e41;
   color: white;
   cursor: pointer;
+}
+
+/*
+  ========================================
+  MyRecipes Component
+  ========================================
+*/
+
+.my-recipes-container,
+.my-recipe {
+  padding: 3px;
+}
+
+.my-recipes-container {
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  width: 25%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: aliceblue;
+}
+
+.my-recipe {
+  text-align: start;
+}
+
+#my-recipe-title {
+  font-size: 25px;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/*
+  ========================================
+  Search Results Component
+  ========================================
+*/
+
+.search-results {
+  display: flex;
+  height: 666px;
+  width: 60%;
+  background-color: gray;
+}
+
+#search-result-title {
+  font-size: 25px;
+  flex-wrap: nowrap;
 }

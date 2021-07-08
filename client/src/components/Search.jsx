@@ -17,11 +17,14 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
-      <form>
-        <input type="text" id="search-bar" onChange={handleSearch} placeholder="Enter recipe here..." required/>
-        <button id="search-btn" onClick={handleClick}>Search!</button>
-      </form>
+    <div className="hero">
+      <div id="title">MyRecipePal</div>
+      <div className="search">
+        <form>
+          <input type="text" id="search-bar" onChange={handleSearch} placeholder="Enter recipe here..." required/>
+          <button id="search-btn" onClick={handleClick}>Search!</button>
+        </form>
+      </div>
     </div>
   );
 };
