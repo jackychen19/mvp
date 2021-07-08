@@ -59,6 +59,10 @@ body {
   cursor: pointer;
 }
 
+.container {
+  display: flex
+}
+
 /*
   ========================================
   MyRecipes Component
@@ -86,6 +90,7 @@ body {
   text-align: start;
 }
 
+#search-result-title,
 #my-recipe-title {
   font-size: 25px;
   color: black;
@@ -99,14 +104,58 @@ body {
   ========================================
 */
 
+.search-results-container {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  height: auto;
+  width: 75%;
+  background-color: aliceblue;
+  margin: 5px;
+  border-radius: 5px;
+}
+
 .search-results {
   display: flex;
-  height: 666px;
-  width: 60%;
-  background-color: gray;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.recipe-card {
+  display: flex;
+  flex-flow: column;
+  height: 300;
+  width: 250;
+  border-radius: 5px;
+  margin: 30px;
+  margin-top: 10px;
 }
 
 #search-result-title {
+  display: flex;
   font-size: 25px;
-  flex-wrap: nowrap;
+  font-style: italic;
+  opacity: .69;
+  margin: 8px;
+}
+
+.recipe-name {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cuisine-type {
+  display: flex;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  font-style: italic;
+  padding: 3px;
+}
+
+
+img {
+  border-radius: 5px;
 }

@@ -12,8 +12,10 @@ const App = () => {
   return (
     <div>
       <Search/>
-      <MyRecipes/>
-      <SearchResults/>
+      <div className="container">
+        <MyRecipes/>
+        <SearchResults/>
+      </div>
     </div>
   );
 };
