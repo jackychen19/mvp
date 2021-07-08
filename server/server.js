@@ -25,7 +25,7 @@ app.get('/recipes', (req, res) => {
     url: 'https://api.edamam.com/api/recipes/v2',
     params: {
       type: 'public',
-      q: query.food,
+      q: query.recipeQuery,
       // eslint-disable-next-line camelcase
       app_id: config.appID,
       // eslint-disable-next-line camelcase
@@ -39,4 +39,8 @@ app.get('/recipes', (req, res) => {
       console.error(err);
       res.send(400);
     });
+});
+
+app.post('/recipes', (req, res) => {
+  console.log(req.body);
 });

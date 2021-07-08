@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
+import { SearchResultContext } from '../App.jsx';
+
 const Search = () => {
-  const [food, setFood] = useState('');
+  const [recipeQuery, setRecipeQuery] = useState('');
+  const setResults = useContext(SearchResultContext).setResults;
 
   const handleSearch = (e) => {
-    setFood(e.target.value);
+    setRecipeQuery(e.target.value);
   };
 
-  const handleClick = () => {
-    if (food !== '') {
-      axios('/recipes', {params: {'food': food}})
-        .then(response => console.log(response.data))
+  const handleClick = (e) => {
+    if (recipeQuery !== '') {
+      e.preventDefault();
+      axios('/recipes', {params: {'recipeQuery': recipeQuery}})
+        .then(searchResults => {
+          setResults(searchResults.data);
+        })
         .catch(err => console.error(err));
     }
   };
@@ -22,7 +28,7 @@ const Search = () => {
       <div className="search">
         <form>
           <input type="text" id="search-bar" onChange={handleSearch} placeholder="Enter recipe here..." required/>
-          <button id="search-btn" onClick={handleClick}>Search!</button>
+          <button className="btn" onClick={handleClick}>Search!</button>
         </form>
       </div>
     </div>
