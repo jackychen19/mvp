@@ -26,7 +26,9 @@ app.get('/recipes', (req, res) => {
     params: {
       type: 'public',
       q: query.food,
+      // eslint-disable-next-line camelcase
       app_id: config.appID,
+      // eslint-disable-next-line camelcase
       app_key: config.appKey
     }
   })

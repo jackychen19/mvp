@@ -1,0 +1,59 @@
+/*
+  ========================================
+  Custom Styles
+  ========================================
+*/
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+/*
+  ========================================
+  Hero
+  ========================================
+*/
+
+#title {
+  font-size: 69px;
+  color: black;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: auto;
+  margin: auto;
+  background-image: linear-gradient(180deg, rgb(36, 36, 235), rgb(97, 181, 255));
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+#search-bar,
+#search-btn {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#search-bar {
+  width: 333px;
+}
+
+#search-btn {
+  background-color: #ddd;
+  color: black;
+  transition: 0.3s;
+}
+
+#search-btn:hover {
+  background-color: #3e8e41;
+  color: white;
+  cursor: pointer;
+}

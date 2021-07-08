@@ -9,8 +9,10 @@ const App = () => {
 
   return (
     <div>
-      <h1>MyRecipePal</h1>
-      <Search/>
+      <div className="hero container">
+        <div id="title">MyRecipePal</div>
+        <Search/>
+      </div>
     </div>
   );
 };

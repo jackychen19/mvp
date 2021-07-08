@@ -9,16 +9,19 @@ const Search = () => {
   };
 
   const handleClick = () => {
-    console.log('food:', food);
-    axios('/recipes', {params: {'food': food}})
-      .then(response => console.log(response.data))
-      .catch(err => console.error(err));
+    if (food !== '') {
+      axios('/recipes', {params: {'food': food}})
+        .then(response => console.log(response.data))
+        .catch(err => console.error(err));
+    }
   };
 
   return (
-    <div>
-      <input type="text" onChange={handleSearch} placeholder="Search for recipes here!"></input>
-      <button onClick={handleClick}>Search!</button>
+    <div className="search">
+      <form>
+        <input type="text" id="search-bar" onChange={handleSearch} placeholder="Enter recipe here..." required/>
+        <button id="search-btn" onClick={handleClick}>Search!</button>
+      </form>
     </div>
   );
 };
