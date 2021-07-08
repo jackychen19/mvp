@@ -31,7 +31,7 @@ app.get('/recipes', (req, res) => {
     }
   })
     .then(response => {
-      res.status(200).send(response.data);
+      res.status(200).send(response.data.hits);
     })
     .catch(err => {
       console.error(err);

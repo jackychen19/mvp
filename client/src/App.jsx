@@ -2,20 +2,15 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+import Search from './components/Search.jsx';
+
 const App = () => {
   const [name, setName] = useState('Jacky');
 
-  const search = () => {
-    console.log('searched!');
-    axios('/recipes', {params: {'food': 'kimchi fried rice'}})
-      .then(response => console.log(response.data))
-      .catch(err => console.error(err));
-  };
-
   return (
     <div>
-      <div>Hello, {name}!</div>
-      <button onClick={search}>Test</button>
+      <h1>MyRecipePal</h1>
+      <Search/>
     </div>
   );
 };
