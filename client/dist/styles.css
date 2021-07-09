@@ -92,11 +92,10 @@ body {
   flex-flow: column;
   flex: 1 0 100%;
   text-align: start;
-  transition: 0.3s;
 }
 
 .my-recipe:hover {
-  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -110,8 +109,8 @@ body {
   border-bottom: solid 1px gray;
 }
 
-#my-recipe-title {
-
+.delete {
+  display: inline-block;
 }
 
 /*

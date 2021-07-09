@@ -7,7 +7,9 @@ const MyRecipeEntry = ({ name, url }) => {
   };
 
   return (
-    <div className="my-recipe" onClick={recipeURL}>{name}</div>
+    <div className="my-recipe">
+      <div onClick={recipeURL}>{name}</div>
+    </div>
   );
 };
 

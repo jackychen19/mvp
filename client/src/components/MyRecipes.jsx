@@ -14,6 +14,7 @@ const MyRecipes = () => {
       setLoading(true);
       axios.get('/recipes')
         .then(response => {
+          console.log('MY RECIPES:', response.data);
           setMyRecipes(response.data);
         })
         .catch(err => console.error(err));
@@ -25,13 +26,11 @@ const MyRecipes = () => {
       <div id="my-recipe-title">My Recipes</div>
       <div className="search-results">
         {
-          myRecipes.map(recipe => <MyRecipeEntry name={recipe.recipe_name} url={recipe.recipe_url}/>)
-
+          myRecipes.map(recipe => <MyRecipeEntry name={recipe.recipe_name} url={recipe.recipe_url} key={recipe.id}/>)
         }
       </div>
     </div>
   );
-
 };
 
 export default MyRecipes;

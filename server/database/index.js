@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 db.connect();
 
 const getMyRecipes = () => {
-  const query = 'SELECT recipe_name, recipe_url, image_url FROM my_recipes';
+  const query = 'SELECT id, recipe_name, recipe_url, image_url FROM my_recipes';
   return new Promise((resolve, reject) => {
     db.query(query, (err, result) => {
       if (err) {
