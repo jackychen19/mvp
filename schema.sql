@@ -1,0 +1,6 @@
+CREATE TABLE my_recipes (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  recipe_name VARCHAR(100) NOT NULL,
+  recipe_url VARCHAR(500) NOT NULL,
+  image_url VARCHAR(500) NOT NULL
+);

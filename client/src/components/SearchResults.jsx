@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
-import { SearchResultContext } from '../App.jsx';
+import { RecipeContext } from '../App.jsx';
 import RecipeCard from './RecipeCard.jsx';
 
 const SearchResults = () => {
   const [toggleResults, setToggleResults] = useState(false);
-  const results = useContext(SearchResultContext).results;
+  const results = useContext(RecipeContext).results;
 
   return (
     <div className="search-results-container">

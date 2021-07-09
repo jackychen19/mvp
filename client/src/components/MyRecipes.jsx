@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 import MyRecipeEntry from './MyRecipeEntry.jsx';
+import { RecipeContext } from '../App.jsx';
 
 const MyRecipes = () => {
-  const [results, setResults] = useState('false');
+  const [loading, setLoading] = useState(false);
+  const myRecipes = useContext(RecipeContext).recipes;
+  const setMyRecipes = useContext(RecipeContext).setRecipes;
 
-  const toggleResults = () => {
-    setResults(true);
-  };
+  useEffect(() => {
+    if (!loading) {
+      setLoading(true);
+      axios.get('/recipes')
+        .then(response => {
+          setMyRecipes(response.data);
+        })
+        .catch(err => console.error(err));
+    }
+  });
 
   return (
     <div className="my-recipes-container">
-      {results &&
       <div id="my-recipe-title">My Recipes</div>
-      }
       <div className="search-results">
-        <MyRecipeEntry/>
+        {
+          myRecipes.map(recipe => <MyRecipeEntry name={recipe.recipe_name} url={recipe.recipe_url}/>)
+
+        }
       </div>
     </div>
   );

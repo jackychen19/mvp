@@ -6,25 +6,28 @@ import Search from './components/Search.jsx';
 import MyRecipes from './components/MyRecipes.jsx';
 import SearchResults from './components/SearchResults.jsx';
 
-export const SearchResultContext = React.createContext([]);
+export const RecipeContext = React.createContext([]);
 
 const App = () => {
   const [results, setResults] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
   const searchVal = {
     results,
-    setResults
+    setResults,
+    recipes,
+    setRecipes
   };
 
   return (
     <div>
-      <SearchResultContext.Provider value={searchVal}>
+      <RecipeContext.Provider value={searchVal}>
         <Search/>
         <div className="container">
           <MyRecipes/>
           <SearchResults/>
         </div>
-      </SearchResultContext.Provider>
+      </RecipeContext.Provider>
     </div>
   );
 };

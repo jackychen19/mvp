@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { RecipeContext } from '../App.jsx';
 
 const RecipeCard = ({ recipe }) => {
-  console.log('recipe:', recipe);
+  const updateMyRecipes = useContext(RecipeContext).setRecipes;
 
   const capitalizeFirstLetter = (string) => {
     string = string.toLowerCase();
@@ -24,9 +25,9 @@ const RecipeCard = ({ recipe }) => {
   };
 
   const addRecipe = () => {
-    console.log('Clicked!');
     axios.post('/recipes', recipe)
-      .then(response => console.log('POST request sent...'))
+      .then(axios('/recipes')
+        .then(myRecipes => updateMyRecipes(myRecipes.data)))
       .catch(err => console.error(err));
   };
 

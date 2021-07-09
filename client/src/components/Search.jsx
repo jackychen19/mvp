@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
-import { SearchResultContext } from '../App.jsx';
+import { RecipeContext } from '../App.jsx';
 
 const Search = () => {
   const [recipeQuery, setRecipeQuery] = useState('');
-  const setResults = useContext(SearchResultContext).setResults;
+  const setResults = useContext(RecipeContext).setResults;
 
   const handleSearch = (e) => {
     setRecipeQuery(e.target.value);
@@ -14,7 +14,7 @@ const Search = () => {
   const handleClick = (e) => {
     if (recipeQuery !== '') {
       e.preventDefault();
-      axios('/recipes', {params: {'recipeQuery': recipeQuery}})
+      axios('/search', {params: {'recipeQuery': recipeQuery}})
         .then(searchResults => {
           setResults(searchResults.data);
         })

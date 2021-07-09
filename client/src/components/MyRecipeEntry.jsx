@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const MyRecipeEntry = () => {
+const MyRecipeEntry = ({ name, url }) => {
+  const recipeURL = () => {
+    window.location = url;
+  };
+
   return (
-    <div className="my-recipe">Kimchi Fried Rice</div>
+    <div className="my-recipe" onClick={recipeURL}>{name}</div>
   );
 };
 
