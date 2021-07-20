@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jackychen19/mvp.git"
+    "url": "git+https://github.com/jackychen19/my-recipe-buddy"
   },
   "author": "Jacky Chen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jackychen19/mvp/issues"
+    "url": "https://github.com/jackychen19/my-recipe-buddy/issues"
   },
-  "homepage": "https://github.com/jackychen19/mvp#readme",
+  "homepage": "https://github.com/jackychen19/my-recipe-buddy#readme",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
