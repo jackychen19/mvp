@@ -24,7 +24,7 @@ const Search = () => {
 
   return (
     <div className="hero">
-      <div id="title">MyRecipePal</div>
+      <div id="title">MyRecipeBuddy</div>
       <div className="search">
         <form>
           <input type="text" id="search-bar" onChange={handleSearch} placeholder="Enter recipe here..." required/>

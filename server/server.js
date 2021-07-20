@@ -5,7 +5,7 @@ const config = require('./config.js');
 const db = require('./database/index.js');
 
 const app = express();
-const port = 6969;
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 app.use(express.json());
