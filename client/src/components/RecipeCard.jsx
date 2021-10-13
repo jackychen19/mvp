@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { RecipeContext } from '../App.jsx';
+import Paper from '@material-ui/core/Paper';
+import { shadows } from '@material-ui/system';
+
 
 const RecipeCard = ({ recipe }) => {
   const updateMyRecipes = useContext(RecipeContext).setRecipes;
@@ -32,13 +35,13 @@ const RecipeCard = ({ recipe }) => {
   };
 
   return (
-    <div className="recipe-card">
+    <Paper className="recipe-card">
       <img src={recipe.image} height="300" width="250"></img>
       <span className="recipe-name" onClick={recipeURL}>{recipe.label}</span>
       <div className="cuisine-type">{cuisineType.map(cuisine => cuisine + ' ')}</div>
       <button className="btn" onClick={addRecipe}>Add Recipe!</button>
 
-    </div>
+    </Paper>
   );
 
 };
