@@ -3,7 +3,7 @@
 MyRecipeBuddy is a single-page web application that browses and saves recipes.
 
 ### Demo:
-![Jul-27-2021 19-12-06](https://user-images.githubusercontent.com/75767494/127252692-5196ddd3-58d4-44ea-808e-46eae3e942b4.gif)
+<img src='/demo/demo.gif?raw=true' width='700px'/>
 
 
 ### Prerequisites:
